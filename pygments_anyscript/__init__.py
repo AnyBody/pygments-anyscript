@@ -58,8 +58,8 @@ class AnyScriptLexer(RegexLexer):
         ],
 
         'statements': [
-            (words(('#if', '#ifdef', '#ifndef', '#undef', '#endif', '#include', '#import',
-                    '#else', '#elif', '#class_template', '#define', '#path', '#var')), Comment.Preproc),
+            (words('#if', '#ifdef', '#ifndef', '#undef', '#endif', '#include', '#import',
+                   '#else', '#elif', '#class_template', '#define', '#path', '#var'), Comment.Preproc),
             (r'[L@]?"', String, 'string'),
             (r'(\d+\.\d*|\.\d+|\d+)[eE][+-]?\d+[lL]?', Number.Float),
             (r'(\d+\.\d*|\.\d+|\d+[fF])[fF]?', Number.Float),
@@ -139,10 +139,9 @@ class AnyScriptDocLexer(AnyScriptLexer):
         ],
         'statements': [
             # For AnyDoc highlighting
-            (r'(§)(/[*])(§)((.|\n)*?)(§)([*]/)(§)', bygroups(Generic.Deleted, Generic.Error,
-                                                             Generic.Deleted, Comment.Multiline,
-                                                             Comment.Multiline, Generic.Deleted,
-                                                             Generic.Error, Generic.Deleted)),
+            (r'(§)(/[*])(§)((.|\n)*?)(§)([*]/)(§)',
+             bygroups(Generic.Deleted, Generic.Error, Generic.Deleted, Comment.Multiline,
+                      Comment.Multiline, Generic.Deleted, Generic.Error, Generic.Deleted)),
             (r'(§)(//)(§)', bygroups(Generic.Deleted, Generic.Error,
                                      Generic.Deleted), 'multiline-directive'),
             (r'§', Generic.Deleted, 'new-codes'),
