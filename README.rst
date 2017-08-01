@@ -6,12 +6,8 @@ Pygments AnyScript plugin
 .. image:: https://img.shields.io/pypi/v/pygments_anyscript.svg
         :target: https://pypi.python.org/pypi/pygments_anyscript
 
-.. image:: https://img.shields.io/travis/melund/pygments_anyscript.svg
-        :target: https://travis-ci.org/melund/pygments_anyscript
-
-.. image:: https://pyup.io/repos/github/melund/pygments_anyscript/shield.svg
-     :target: https://pyup.io/repos/github/melund/pygments_anyscript/
-     :alt: Updates
+.. image:: https://img.shields.io/travis/AnyBody/pygments_anyscript.svg
+        :target: https://travis-ci.org/AnyBody/pygments_anyscript
 
 
 Pygments lexer and style for the AnyScript language
