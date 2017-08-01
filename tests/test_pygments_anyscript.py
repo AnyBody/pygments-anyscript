@@ -3,8 +3,6 @@
 
 """Very simple tests for `pygments_anyscript` package."""
 
-import pygments
-
 import pygments_anyscript
 
 ANYSCRIPT_TEST1 = """\
@@ -27,6 +25,7 @@ Main =
 
 
 def test_install_lexer():
+    import pygments
     lexer = pygments.lexers.get_lexer_by_name('AnyScript')
     assert isinstance(lexer, pygments_anyscript.AnyScriptLexer)
 
@@ -35,6 +34,7 @@ def test_install_lexer():
 
 
 def test_install_style():
+    import pygments
     style = pygments.styles.get_style_by_name('AnyScript')
     assert style is pygments_anyscript.AnyScriptStyle
 
