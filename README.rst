@@ -6,11 +6,14 @@ Pygments AnyScript plugin
 .. image:: https://img.shields.io/pypi/v/pygments_anyscript.svg
         :target: https://pypi.python.org/pypi/pygments_anyscript
 
-.. image:: https://img.shields.io/travis/AnyBody/pygments_anyscript.svg
-        :target: https://travis-ci.org/AnyBody/pygments_anyscript
+.. image:: https://img.shields.io/travis/AnyBody/pygments-anyscript.svg
+        :target: https://travis-ci.org/AnyBody/pygments-anyscript
 
 
-Pygments lexer and style for the AnyScript language
+Pygments lexer and style for the AnyScript language. AnyScript is the
+scripting langugage used for the AnyBody Modeling System; a system for
+multibody musculoskeletal analysis.
+
 
 Installation
 ------------
