@@ -142,8 +142,8 @@ class AnyScriptDocLexer(AnyScriptLexer):
             (r'(§)(/[*])(§)((.|\n)*?)(§)([*]/)(§)',
              bygroups(Generic.Deleted, Generic.Error, Generic.Deleted, Comment.Multiline,
                       Comment.Multiline, Generic.Deleted, Generic.Error, Generic.Deleted)),
-            (r'(§)(//)(§)', bygroups(Generic.Deleted, Generic.Error,
-                                     Generic.Deleted), 'multiline-directive'),
+            (r'(§)(//)(§)',
+             bygroups(Generic.Deleted, Generic.Error, Generic.Deleted), 'multiline-directive'),
             (r'§', Generic.Deleted, 'new-codes'),
             inherit
         ],

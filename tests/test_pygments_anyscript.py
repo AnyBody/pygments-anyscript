@@ -28,7 +28,7 @@ Main =
 """
 
 
-@pytest.mark.skipif(os.getenv('NOPLUGINS'),
+@pytest.mark.skipif(bool(os.getenv('NOPLUGINS')),
                     reason="Don't test plugin installation")
 def test_install_lexer():
     lexer = pygments.lexers.get_lexer_by_name('AnyScript')
@@ -38,6 +38,8 @@ def test_install_lexer():
     assert isinstance(lexerdoc, pygments_anyscript.AnyScriptDocLexer)
 
 
+@pytest.mark.skipif(bool(os.getenv('NOPLUGINS')),
+                    reason="Don't test plugin installation")
 def test_install_style():
     import pygments
     style = pygments.styles.get_style_by_name('AnyScript')
