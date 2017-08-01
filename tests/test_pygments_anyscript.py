@@ -2,6 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """Very simple tests for `pygments_anyscript` package."""
+import os
+
+import pygments
+import pytest
 
 import pygments_anyscript
 
@@ -24,8 +28,9 @@ Main =
 """
 
 
+@pytest.mark.skipif(os.getenv('NOPLUGINS'),
+                    reason="Don't test plugin installation")
 def test_install_lexer():
-    import pygments
     lexer = pygments.lexers.get_lexer_by_name('AnyScript')
     assert isinstance(lexer, pygments_anyscript.AnyScriptLexer)
 

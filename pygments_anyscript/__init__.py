@@ -58,8 +58,8 @@ class AnyScriptLexer(RegexLexer):
         ],
 
         'statements': [
-            (words('#if', '#ifdef', '#ifndef', '#undef', '#endif', '#include', '#import',
-                   '#else', '#elif', '#class_template', '#define', '#path', '#var'), Comment.Preproc),
+            (words(('#if', '#ifdef', '#ifndef', '#undef', '#endif', '#include', '#import',
+                    '#else', '#elif', '#class_template', '#define', '#path', '#var')), Comment.Preproc),
             (r'[L@]?"', String, 'string'),
             (r'(\d+\.\d*|\.\d+|\d+)[eE][+-]?\d+[lL]?', Number.Float),
             (r'(\d+\.\d*|\.\d+|\d+[fF])[fF]?', Number.Float),
