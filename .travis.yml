@@ -34,7 +34,7 @@ deploy:
       secure: "NzUNdzQp1uPos0V/oe/NPuKslq1yymBzbiyWsnOBf5DnBw3HlyLgTpcH1MFqTclf3CHsb31XuVoEQPNAR2xLuWbL6HM9faJ7s8JEG0cz6/YEviZsuxN3WRPrlN7fw4CTvLG2Y1FYa2rfaOwFqtmm9EP+HrCwGuxayEwGSYzWdWhqbFzImhLih1WODTyKsIIbwO6KaosfaJlv6WRT64beJG6m7ig9i20EGIlX2EM5RNJMGsoJJBt2G1jUgBilKCdLxV6Jhom8BecJ5KorvAJw8ZlOpgyjqMzShgPhlLFExgyoBo0JVudPRo1EnzwXVxCVC7TsBhURleOVOfiB0XDnTc6xFAzsiDsE681Cr1fhILi/BCuuMLzl3T6CYdnN8g62zjTiKCtoDfM9fHCcJYhDI7JZxrM3g8J5+WId2xgzbnPCfjlGkqDeXyZMof+AUanA+N2QdlfoLVhFk1F7lBIVNNLIuWJGcCuSyqpUZS4hgs3q4kjB0OsNE/ZIMvA4hW/Wqdn5qZhxRuH1dUV1NHL8DEUDmEnToIiv2cV15G8u97mHfMxyYRFB0BZROe2pN1yocCttKnpMnQYopvRcCydECZZKofEtqiZEizmCVcaKrY99A7aCP4IXRRB9YfSiN4AKisxLXD4kcf6Uxf2coFIJkpYgCoat2O9jhicUJcel22s="
     on:
       tags: false
-      repo: anybody/pygments_anyscript
+      repo: AnyBody/pygments-anyscript
       condition: $TRAVIS_PYTHON_VERSION = "3.6"
     # Production pypi
   - provider: pypi
@@ -44,5 +44,5 @@ deploy:
       secure: "NzUNdzQp1uPos0V/oe/NPuKslq1yymBzbiyWsnOBf5DnBw3HlyLgTpcH1MFqTclf3CHsb31XuVoEQPNAR2xLuWbL6HM9faJ7s8JEG0cz6/YEviZsuxN3WRPrlN7fw4CTvLG2Y1FYa2rfaOwFqtmm9EP+HrCwGuxayEwGSYzWdWhqbFzImhLih1WODTyKsIIbwO6KaosfaJlv6WRT64beJG6m7ig9i20EGIlX2EM5RNJMGsoJJBt2G1jUgBilKCdLxV6Jhom8BecJ5KorvAJw8ZlOpgyjqMzShgPhlLFExgyoBo0JVudPRo1EnzwXVxCVC7TsBhURleOVOfiB0XDnTc6xFAzsiDsE681Cr1fhILi/BCuuMLzl3T6CYdnN8g62zjTiKCtoDfM9fHCcJYhDI7JZxrM3g8J5+WId2xgzbnPCfjlGkqDeXyZMof+AUanA+N2QdlfoLVhFk1F7lBIVNNLIuWJGcCuSyqpUZS4hgs3q4kjB0OsNE/ZIMvA4hW/Wqdn5qZhxRuH1dUV1NHL8DEUDmEnToIiv2cV15G8u97mHfMxyYRFB0BZROe2pN1yocCttKnpMnQYopvRcCydECZZKofEtqiZEizmCVcaKrY99A7aCP4IXRRB9YfSiN4AKisxLXD4kcf6Uxf2coFIJkpYgCoat2O9jhicUJcel22s="
     on:
       tags: true
-      repo: anybody/pygments_anyscript
+      repo: AnyBody/pygments-anyscript
       condition: $TRAVIS_PYTHON_VERSION = "3.6"
