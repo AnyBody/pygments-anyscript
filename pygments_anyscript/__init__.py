@@ -4,7 +4,7 @@
 
 __author__ = """Morten Enemark Lund"""
 __email__ = 'mel@anybodytech.com'
-__version__ = '0.2.0'
+__version__ = '1.0.0'
 
 import os
 

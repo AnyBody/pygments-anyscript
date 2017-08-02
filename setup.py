@@ -24,7 +24,7 @@ test_requirements = [
 
 setup(
     name='pygments_anyscript',
-    version='0.2.0',
+    version='1.0.0',
     description="Pygments lexer and style for the AnyScript language",
     long_description=readme + '\n\n' + history,
     author="Morten Enemark Lund",
@@ -51,7 +51,7 @@ setup(
     keywords=["pygments", "pygments-anyscript", "lexer",
               "anyscript", "AnyBody Modeling System"],
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
