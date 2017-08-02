@@ -2,7 +2,13 @@
 History
 =======
 
-0.1.0 (2017-08-02)
+1.0.0 (2017-08-02)
+------------------
+
+* Update documentation and release as 1.0.0
+
+
+0.2.0 (2017-08-02)
 ------------------
 
 * Split Lexer for AnyScript documentation into its own ``AnyScriptDocLexer``.

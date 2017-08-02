@@ -29,7 +29,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author="Morten Enemark Lund",
     author_email='mel@anybodytech.com',
-    url='https://github.com/melund/pygments_anyscript',
+    url='https://github.com/AnyBody/pygments-anyscript',
     packages=find_packages(include=['pygments_anyscript']),
     entry_points={
         'pygments.lexers':
