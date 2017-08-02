@@ -48,7 +48,7 @@ setup(
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,
-    keywords=["pygments", "pygments_anyscript", "lexer",
+    keywords=["pygments", "pygments-anyscript", "lexer",
               "anyscript", "AnyBody Modeling System"],
     classifiers=[
         'Development Status :: 4 - Beta',
