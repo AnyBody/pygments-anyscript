@@ -39,12 +39,6 @@ setup(
             ['AnyScript = pygments_anyscript:AnyScriptStyle']
     },
     include_package_data=True,
-    package_data={
-        'pygments_anyscript': [
-            'classes.txt', 'functions.txt', 'globals.txt', 'options.txt',
-            'statements.txt'
-        ],
-    },
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,
