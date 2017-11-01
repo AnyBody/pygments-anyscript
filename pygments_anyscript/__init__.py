@@ -4,7 +4,7 @@
 
 __author__ = """Morten Enemark Lund"""
 __email__ = 'mel@anybodytech.com'
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 
 import os
 
@@ -23,9 +23,9 @@ with open(os.path.join(_ROOT, 'functions.txt')) as f:
     ANYFUNCTIONS = f.read().split()
 with open(os.path.join(_ROOT, 'globals.txt')) as f:
     ANYGLOBALS = f.read().split()
-with open(os.path.join(_ROOT, 'statements.txt')) as f:
+with open(os.path.join(_ROOT, 'BM_parameters.txt')) as f:
     ANYSTATEMENTS = f.read().split()
-with open(os.path.join(_ROOT, 'options.txt')) as f:
+with open(os.path.join(_ROOT, 'BM_constants.txt')) as f:
     ANYOPTIONS = f.read().split()
 
 
@@ -60,11 +60,11 @@ class AnyScriptLexer(RegexLexer):
         'statements': [
             (words(('#if', '#ifdef', '#ifndef', '#undef', '#endif', '#include', '#import',
                     '#else', '#elif', '#class_template', '#define', '#path', '#var')), Comment.Preproc),
-            (r'[L@]?"', String, 'string'),
+            (r'"', String, 'string'),
             (r'(\d+\.\d*|\.\d+|\d+)[eE][+-]?\d+[lL]?', Number.Float),
             (r'(\d+\.\d*|\.\d+|\d+[fF])[fF]?', Number.Float),
             (r'\d+[Ll]?', Number.Integer),
-            (r"['&*+=|?:<>/-]", Operator),
+            (r"['&*+=|!\^<>/-]", Operator),
             # TODO: "correctly" parse complex code attributes
             (r'[()\[\],.]', Punctuation),
             # Globals
@@ -154,8 +154,22 @@ class AnyScriptDocLexer(AnyScriptLexer):
         for index, token, value in AnyScriptLexer.get_tokens_unprocessed(self, text):
             if token is Generic.Deleted and value == '§':
                 yield index, token, ''
+            elif token is Error:
+                yield index, Text, value
             else:
                 yield index, token, value
+
+    # It also ensures the AnyScriptDoc lexer doesn't create Error tokens,
+    # since such tokens cause Sphinx to skip highlighting.
+    # Hence AnyScriptDoc can be used with AnyScript that is not
+    # syntacticly correct in Sphinx
+    def get_tokens(self, text):
+        for tokentype, value in super().get_tokens(text):
+            if tokentype is Error:
+                yield Text, value
+            else:
+                yield tokentype, value
+
 
 
 class AnyScriptStyle(Style):

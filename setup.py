@@ -2,8 +2,27 @@
 # -*- coding: utf-8 -*-
 
 """The setup script."""
+import os
+import io
+import re
 
 from setuptools import find_packages, setup
+
+VERSION_RE = re.compile(r"^__version__ = ['\"]([^'\"]*)['\"]")
+
+
+def find_version(file_path, **kwargs):
+    """Parse the __version__ string from a file."""
+    with io.open(
+        os.path.join(os.path.dirname(__file__), file_path),
+        encoding=kwargs.get("encoding", "utf8")
+    ) as fp:
+        version_file = fp.read()
+    version_match = VERSION_RE.search(version_file, re.M)
+    if not version_match:
+        raise RuntimeError("Unable to find version string.")
+    return version_match.group(1)
+
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -24,7 +43,7 @@ test_requirements = [
 
 setup(
     name='pygments_anyscript',
-    version='1.0.0',
+    version=find_version("pygments_anyscript/__init__.py"),
     description="Pygments lexer and style for the AnyScript language",
     long_description=readme + '\n\n' + history,
     author="Morten Enemark Lund",
@@ -42,7 +61,7 @@ setup(
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,
-    keywords=["pygments", "pygments-anyscript", "lexer",
+    keywords=["pygments", "pygments_anyscript", "lexer",
               "anyscript", "AnyBody Modeling System"],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
