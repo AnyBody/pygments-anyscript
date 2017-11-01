@@ -171,7 +171,6 @@ class AnyScriptDocLexer(AnyScriptLexer):
     #             yield tokentype, value
 
 
-
 class AnyScriptStyle(Style):
     background_color = "#f8f8f8"
     default_style = ""
