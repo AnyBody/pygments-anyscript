@@ -8,8 +8,6 @@ import re
 
 from setuptools import find_packages, setup
 
-VERSION_RE = re.compile(r"^__version__ = ['\"]([^'\"]*)['\"]")
-
 
 def find_version(file_path, **kwargs):
     """Parse the __version__ string from a file."""
@@ -18,7 +16,8 @@ def find_version(file_path, **kwargs):
         encoding=kwargs.get("encoding", "utf8")
     ) as fp:
         version_file = fp.read()
-    version_match = VERSION_RE.search(version_file, re.M)
+    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
+        version_file, re.M)
     if not version_match:
         raise RuntimeError("Unable to find version string.")
     return version_match.group(1)

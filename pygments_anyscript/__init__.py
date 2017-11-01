@@ -61,9 +61,9 @@ class AnyScriptLexer(RegexLexer):
             (words(('#if', '#ifdef', '#ifndef', '#undef', '#endif', '#include', '#import',
                     '#else', '#elif', '#class_template', '#define', '#path', '#var')), Comment.Preproc),
             (r'"', String, 'string'),
-            (r'(\d+\.\d*|\.\d+|\d+)[eE][+-]?\d+[lL]?', Number.Float),
+            (r'(\d+\.\d*|\.\d+|\d+)[eE][+-]?\d+', Number.Float),
             (r'(\d+\.\d*|\.\d+|\d+[fF])[fF]?', Number.Float),
-            (r'\d+[Ll]?', Number.Integer),
+            (r'\d+', Number.Integer),
             (r"['&*+=|!\^<>/-]", Operator),
             # TODO: "correctly" parse complex code attributes
             (r'[()\[\],.]', Punctuation),
@@ -163,12 +163,12 @@ class AnyScriptDocLexer(AnyScriptLexer):
     # since such tokens cause Sphinx to skip highlighting.
     # Hence AnyScriptDoc can be used with AnyScript that is not
     # syntacticly correct in Sphinx
-    def get_tokens(self, text):
-        for tokentype, value in super().get_tokens(text):
-            if tokentype is Error:
-                yield Text, value
-            else:
-                yield tokentype, value
+    # def get_tokens(self, text):
+    #     for tokentype, value in super().get_tokens(text):
+    #         if tokentype is Error:
+    #             yield Text, value
+    #         else:
+    #             yield tokentype, value
 
 
 
