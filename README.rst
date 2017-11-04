@@ -2,12 +2,18 @@
 Pygments AnyScript plugin
 =========================
 
-
 .. image:: https://img.shields.io/pypi/v/pygments_anyscript.svg
-        :target: https://pypi.python.org/pypi/pygments_anyscript
-
+    :target: https://pypi.python.org/pypi/pygments_anyscript
+.. image:: https://anaconda.org/conda-forge/pygments_anyscript/badges/version.svg
+    :target: https://anaconda.org/conda-forge/pygments_anyscript
 .. image:: https://img.shields.io/travis/AnyBody/pygments-anyscript.svg
-        :target: https://travis-ci.org/AnyBody/pygments-anyscript
+    :target: https://travis-ci.org/AnyBody/pygments-anyscript
+.. image:: https://img.shields.io/travis/AnyBody/pygments-anyscript.svg
+    :target: https://travis-ci.org/AnyBody/pygments-anyscript
+.. image:: https://anaconda.org/conda-forge/pygments_anyscript/badges/downloads.svg
+    :target: https://anaconda.org/conda-forge/pygments_anyscript
+.. image:: https://anaconda.org/conda-forge/pygments_anyscript/badges/installer/conda.svg
+    :target: https://conda.anaconda.org/conda-forge
 
 
 Pygments lexer and style for the AnyScript language. AnyScript is the

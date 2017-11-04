@@ -2,6 +2,15 @@
 History
 =======
 
+1.1.0 (2017-08-02)
+------------------
+
+* Add support for Body Model parameters for AMMR 2.0.
+* Update AnyScriptDoc lexer to ignore syntax error etc. This makes
+  it possible to use the lexer with sphinx even if the code is not
+  sytactically correct.
+
+
 1.0.0 (2017-08-02)
 ------------------
 
