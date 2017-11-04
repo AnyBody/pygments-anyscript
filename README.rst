@@ -19,8 +19,10 @@ multibody musculoskeletal analysis.
 
 Installation
 ------------
- * run ``pip install pygments-anyscript``
- * download source and execute ``python setup.py install``
+
+* **Pip:** Run ``pip install pygments-anyscript``
+* **Conda:** Run ``conda -c conda-forge pygments_anyscript``
+* **Source:** Download source and execute ``python setup.py install``
 
 Requirements
 ------------
@@ -31,6 +33,7 @@ Usage
 -----
 
 The lexer and style can be used with the Pygments api like any other lexer or style.
+
 ::
 
   $ pygmentize -l AnyScript MyAnyScriptFile.any
