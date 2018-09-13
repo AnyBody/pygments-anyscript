@@ -4,7 +4,6 @@
 language: python
 python:
   - 2.7
-  - 3.5
   - 3.6
 
 
@@ -18,7 +17,7 @@ install:
 
 
 # command to run tests, e.g. python setup.py test
-script: pytest --flake8
+script: pytest
 
 
 

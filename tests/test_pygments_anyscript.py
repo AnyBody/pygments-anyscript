@@ -28,21 +28,24 @@ Main =
 """
 
 
-@pytest.mark.skipif(bool(os.getenv('NOPLUGINS')),
-                    reason="Don't test plugin installation")
+@pytest.mark.skipif(
+    bool(os.getenv("NOPLUGINS")), reason="Don't test plugin installation"
+)
 def test_install_lexer():
-    lexer = pygments.lexers.get_lexer_by_name('AnyScript')
+    lexer = pygments.lexers.get_lexer_by_name("AnyScript")
     assert isinstance(lexer, pygments_anyscript.AnyScriptLexer)
 
-    lexerdoc = pygments.lexers.get_lexer_by_name('AnyScriptDoc')
+    lexerdoc = pygments.lexers.get_lexer_by_name("AnyScriptDoc")
     assert isinstance(lexerdoc, pygments_anyscript.AnyScriptDocLexer)
 
 
-@pytest.mark.skipif(bool(os.getenv('NOPLUGINS')),
-                    reason="Don't test plugin installation")
+@pytest.mark.skipif(
+    bool(os.getenv("NOPLUGINS")), reason="Don't test plugin installation"
+)
 def test_install_style():
     import pygments
-    style = pygments.styles.get_style_by_name('AnyScript')
+
+    style = pygments.styles.get_style_by_name("AnyScript")
     assert style is pygments_anyscript.AnyScriptStyle
 
 
@@ -51,10 +54,10 @@ def test_lexer():
     tokens = list(lexer.get_tokens(ANYSCRIPT_TEST1))
 
     assert tokens[0][0] in pygments_anyscript.Comment
-    assert tokens[0][1] == '// Comment\n'
+    assert tokens[0][1] == "// Comment\n"
 
     assert tokens[7][0] in pygments_anyscript.Name
-    assert tokens[7][1] == 'Main'
+    assert tokens[7][1] == "Main"
 
     assert tokens[29][0] in pygments_anyscript.Keyword
-    assert tokens[29][1] == 'AnyBodyStudy'
+    assert tokens[29][1] == "AnyBodyStudy"
