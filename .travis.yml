@@ -1,47 +1,20 @@
-# Config file for automatic testing at travis-ci.org
-# This file will be regenerated if you run travis_pypi_setup.py
-
 language: python
 python:
-  - 2.7
-  - 3.6
-
-
+- 2.7
+- 3.6
 env:
-  - NOPLUGINS=true
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+- NOPLUGINS=true
 install:
-    - pip install -r requirements-tests.txt
-    - python setup.py install
-
-
-# command to run tests, e.g. python setup.py test
+- pip install -r requirements-tests.txt
+- python setup.py install
 script: pytest
-
-
-
-# After you create the Github repo and add it to Travis, run the
-# travis_pypi_setup.py script to finish PyPI deployment setup
 deploy:
-    # Test pypi
-  - provider: pypi
-    distributions: sdist
-    server: https://test.pypi.org/legacy/
-    user: melund
-    password:
-      secure: "NzUNdzQp1uPos0V/oe/NPuKslq1yymBzbiyWsnOBf5DnBw3HlyLgTpcH1MFqTclf3CHsb31XuVoEQPNAR2xLuWbL6HM9faJ7s8JEG0cz6/YEviZsuxN3WRPrlN7fw4CTvLG2Y1FYa2rfaOwFqtmm9EP+HrCwGuxayEwGSYzWdWhqbFzImhLih1WODTyKsIIbwO6KaosfaJlv6WRT64beJG6m7ig9i20EGIlX2EM5RNJMGsoJJBt2G1jUgBilKCdLxV6Jhom8BecJ5KorvAJw8ZlOpgyjqMzShgPhlLFExgyoBo0JVudPRo1EnzwXVxCVC7TsBhURleOVOfiB0XDnTc6xFAzsiDsE681Cr1fhILi/BCuuMLzl3T6CYdnN8g62zjTiKCtoDfM9fHCcJYhDI7JZxrM3g8J5+WId2xgzbnPCfjlGkqDeXyZMof+AUanA+N2QdlfoLVhFk1F7lBIVNNLIuWJGcCuSyqpUZS4hgs3q4kjB0OsNE/ZIMvA4hW/Wqdn5qZhxRuH1dUV1NHL8DEUDmEnToIiv2cV15G8u97mHfMxyYRFB0BZROe2pN1yocCttKnpMnQYopvRcCydECZZKofEtqiZEizmCVcaKrY99A7aCP4IXRRB9YfSiN4AKisxLXD4kcf6Uxf2coFIJkpYgCoat2O9jhicUJcel22s="
-    on:
-      tags: false
-      repo: AnyBody/pygments-anyscript
-      condition: $TRAVIS_PYTHON_VERSION = "3.6"
-    # Production pypi
-  - provider: pypi
-    distributions: sdist bdist_wheel
-    user: melund
-    password:
-      secure: "NzUNdzQp1uPos0V/oe/NPuKslq1yymBzbiyWsnOBf5DnBw3HlyLgTpcH1MFqTclf3CHsb31XuVoEQPNAR2xLuWbL6HM9faJ7s8JEG0cz6/YEviZsuxN3WRPrlN7fw4CTvLG2Y1FYa2rfaOwFqtmm9EP+HrCwGuxayEwGSYzWdWhqbFzImhLih1WODTyKsIIbwO6KaosfaJlv6WRT64beJG6m7ig9i20EGIlX2EM5RNJMGsoJJBt2G1jUgBilKCdLxV6Jhom8BecJ5KorvAJw8ZlOpgyjqMzShgPhlLFExgyoBo0JVudPRo1EnzwXVxCVC7TsBhURleOVOfiB0XDnTc6xFAzsiDsE681Cr1fhILi/BCuuMLzl3T6CYdnN8g62zjTiKCtoDfM9fHCcJYhDI7JZxrM3g8J5+WId2xgzbnPCfjlGkqDeXyZMof+AUanA+N2QdlfoLVhFk1F7lBIVNNLIuWJGcCuSyqpUZS4hgs3q4kjB0OsNE/ZIMvA4hW/Wqdn5qZhxRuH1dUV1NHL8DEUDmEnToIiv2cV15G8u97mHfMxyYRFB0BZROe2pN1yocCttKnpMnQYopvRcCydECZZKofEtqiZEizmCVcaKrY99A7aCP4IXRRB9YfSiN4AKisxLXD4kcf6Uxf2coFIJkpYgCoat2O9jhicUJcel22s="
-    on:
-      tags: true
-      repo: AnyBody/pygments-anyscript
-      condition: $TRAVIS_PYTHON_VERSION = "3.6"
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: melund
+  password:
+    secure: i4d6JbdKHbN8Ww4po6EByRPnRxRYe3Z41jaIqc/RDChKu8MTaQGAOZ8FppwHWYK0QsRL7kGGv4KPDs70uqqDktwwvrrqfNhT6z885EzXkI8OYDRRTEFU7Hz25GIC9sDnW9bN88doE/H/4ezPKAy6HSNWNbCsDIEVePc5B6506VsFpBO6juCRhFBA+00o9kr4VyqWlA2g9IzsV8qQr8R6CPeggvqlr2m4rZk3a6aLaj0/zKSORqyDdvmfnOPvgDVxB4qHr+FXOamqoR9BzMHu2iGFIdQN4tteb2T3iH0i4FTQLiJuAD7JNGfxc8F3sC5M2SMFRjZveB6FnKoqroJQgfSPRpFGA7SIh2FleL4zKaeG74VYOCLkwt0Ls/RI0YdKKhIdwOeXqYj947GhCXnCqyTdkthHL+BNn79SqK8oVf5QhB46TmTFPPAGaA5rDEtx/fCnVk0BgxgVkwF+UFlscVg4VpydNfXlvwgLxU4xFhObDXe7iZJTC26j4kJ3s3ltCNZATqXE6hXSeHB86BgtZTVVwLqFGxD45L1MiePwVyJ+o373Sox4bmj8NYd40/Y7AVAVrSoqmN1XSZQBHIONmMnX2mLF+1itH2tPdwIZMGvagaEGW/wP2YRxRULQbsV4HkZ0qrmHOTzhLnNCk07/WydkAFcIHn7rhEAboDVRZCE=
+  on:
+    tags: true
+    repo: AnyBody/pygments-anyscript
+    python: 3.6
