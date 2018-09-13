@@ -2,6 +2,17 @@
 History
 =======
 
+1.2.1 (2018-09-13)
+------------------
+
+* Try to automatic deplay to pypi using travis
+
+1.2.0 (2018-09-13)
+------------------
+
+* Update class, function, and global names to support newest version of 
+  the AnyScript language
+
 1.1.0 (2017-08-02)
 ------------------
 
