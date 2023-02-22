@@ -84,6 +84,8 @@ class AnyScriptLexer(RegexLexer):
                         "#elif",
                         "#class_template",
                         "#define",
+                        "#ifpathexists"
+                        "#ifnpathexists"
                         "#path",
                         "#var",
                     )
