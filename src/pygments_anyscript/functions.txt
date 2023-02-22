@@ -16,6 +16,7 @@ FilePathRelativeOf
 FilePathCompleteOf
 FilePathReferenceOf
 iarr
+nonzeros
 farr
 zeros
 ones
@@ -27,7 +28,19 @@ repmat
 arrcat
 flatten
 reshape
+squeeze
+unique
+diag
+diagonal
+moveaxis
+transpose
+take
+flip
+roll
 DesignVar
+set_union
+set_intersection
+set_difference
 iffun
 bool
 not
@@ -40,6 +53,7 @@ min
 argmax
 argmin
 vnorm
+normalize
 argfind
 assert
 expect
@@ -53,6 +67,7 @@ mult
 div
 atan2
 cross
+skewmat3d
 RotMat
 ObjSelect
 ObjSearch
@@ -60,7 +75,6 @@ ObjSearchRecursive
 Obj2Num
 Obj2Str
 ObjSort
-ANYSURF_Vertices
 STL_Vertices
 STL_Size
 LAPACK_geev

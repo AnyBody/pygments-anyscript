@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-
-"""Top-level package for Pygments AnyScript plugin."""
-
+"""
+Pygments lexer and style for the AnyScript language. AnyScript is the
+scripting langugage used for the AnyBody Modeling System; a system for
+multibody musculoskeletal analysis.
+"""
 __author__ = """Morten Enemark Lund"""
 __email__ = "mel@anybodytech.com"
-__version__ = "1.2.1"
+__version__ = "1.3.0"
 
 import os
 
@@ -93,6 +95,7 @@ class AnyScriptLexer(RegexLexer):
             (r"(\d+\.\d*|\.\d+|\d+[fF])[fF]?", Number.Float),
             (r"\d+", Number.Integer),
             (r"['&*+=|!\^<>/-]", Operator),
+            (r"\?\?=", Operator),
             # TODO: "correctly" parse complex code attributes
             (r"[()\[\],.]", Punctuation),
             # Globals

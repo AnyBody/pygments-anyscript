@@ -5,9 +5,14 @@
 import os
 
 import pygments
+import pygments.lexers
+import pygments.formatters
+import pygments.styles
+
 import pytest
 
 import pygments_anyscript
+
 
 ANYSCRIPT_TEST1 = """\
 // Comment
