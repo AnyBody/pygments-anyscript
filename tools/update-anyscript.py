@@ -1,6 +1,5 @@
 from pathlib import Path
 import json
-import enum
 
 try:
     import tomllib
@@ -9,10 +8,8 @@ except ModuleNotFoundError:
 
 import click
 
-BM_TYPE = enum.StrEnum("BM_TYPE", ["constants", "parameters"])
 
-
-def get_bm_config(paramfile: Path, bm_type: BM_TYPE):
+def get_bm_config(paramfile: Path, bm_type: str):
     if not paramfile.exists():
         raise FileNotFoundError(f"{paramfile.name} could not be found")
     data = tomllib.loads(paramfile.read_text())
@@ -46,9 +43,9 @@ def create_files(ammr: str | None, reference_manual: str | None, output:str):
     if ammr:
         bm_paramfile = Path(ammr) / "Body/AAUHuman/bm-parameters.toml"
         with open(output / "BM_constants.txt", "w") as fh:
-            fh.write(get_bm_config(bm_paramfile, BM_TYPE.constants))
+            fh.write(get_bm_config(bm_paramfile, "constants"))
         with open(output / "BM_parameters.txt", "w") as fh:
-            fh.write(get_bm_config(bm_paramfile, BM_TYPE.parameters))
+            fh.write(get_bm_config(bm_paramfile, "parameters"))
 
     if reference_manual:
         classes_file = Path(reference_manual) / "_anybody-data/all-classes.json"
