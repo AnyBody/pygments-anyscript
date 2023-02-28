@@ -38,7 +38,7 @@ def get_anyscript_info(anyinfofile:Path):
     type=click.Path(),
     help="Path to the AMS reference manual",
 )
-def create_files(ammr: str | None, reference_manual: str | None, output:str):
+def create_files(ammr: str, reference_manual: str, output:str):
     output = Path(output)
     if ammr:
         bm_paramfile = Path(ammr) / "Body/AAUHuman/bm-parameters.toml"
