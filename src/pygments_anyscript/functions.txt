@@ -1,3 +1,5 @@
+Path
+System
 NumElemOf
 DimOf
 SizesOf
@@ -69,9 +71,15 @@ atan2
 cross
 skewmat3d
 RotMat
-ObjSelect
 ObjSearch
 ObjSearchRecursive
+ObjSelect
+ObjGetMember
+ObjGetParent
+ObjRefResolve
+ObjFilterByClass
+ObjFilterByName
+ObjFilterByValue
 Obj2Num
 Obj2Str
 ObjSort
