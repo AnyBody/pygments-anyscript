@@ -29,3 +29,28 @@ AnyScript = "pygments_anyscript:AnyScriptStyle"
 
 [project.urls]
 Home = "https://github.com/AnyBody/pygments-anyscript"
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tool.pixi.pypi-dependencies]
+pygments_anyscript = { path = ".", editable = true }
+
+[tool.pixi.environments]
+default = { solve-group = "default" }
+test = { features = ["test"], solve-group = "default" }
+build = { features = ["build"], solve-group = "default" }
+
+[tool.pixi.feature.build.dependencies]
+build="*"
+flit="*"
+twine="*"
+
+[tool.pixi.feature.build.tasks]
+clean-build = "rm -rf build dist"
+pipy-upload = {cmd="twine upload dist/*"}
+build = {cmd="python -m build . --sdist"}
+
+
+[tool.pixi.tasks]
