@@ -155,18 +155,18 @@ class AnyScriptDocLexer(AnyScriptLexer):
 
     tokens = {
         "multiline-directive": [
-            (r"(.*?)(§)", bygroups(Comment.Single, Generic.Deleted), "new-codes"),
+            (r"(.*?)(\$)", bygroups(Comment.Single, Generic.Deleted), "new-codes"),
             (r".*?\n", Comment.Single, "#pop"),
         ],
         "new-codes": [
-            (r"[^§]+", Generic.Error),
-            (r"§", Generic.Deleted, "#pop"),
-            (r"[§]", Generic.Error),
+            (r"[^\$]+", Generic.Error),
+            (r"\$", Generic.Deleted, "#pop"),
+            (r"[\$]", Generic.Error),
         ],
         "statements": [
             # For AnyDoc highlighting
             (
-                r"(§)(/[*])(§)((.|\n)*?)(§)([*]/)(§)",
+                r"(\$)(/[*])(\$)((.|\n)*?)(\$)([*]/)(\$)",
                 bygroups(
                     Generic.Deleted,
                     Generic.Error,
@@ -179,19 +179,19 @@ class AnyScriptDocLexer(AnyScriptLexer):
                 ),
             ),
             (
-                r"(§)(//)(§)",
+                r"(\$)(//)(\$)",
                 bygroups(Generic.Deleted, Generic.Error, Generic.Deleted),
                 "multiline-directive",
             ),
-            (r"§", Generic.Deleted, "new-codes"),
+            (r"\$", Generic.Deleted, "new-codes"),
             inherit,
         ],
     }
 
-    # This remove the § markers used in the Documentation to highlight specific lines
+    # This remove the $ markers used in the Documentation to highlight specific lines
     def get_tokens_unprocessed(self, text):
         for index, token, value in AnyScriptLexer.get_tokens_unprocessed(self, text):
-            if token is Generic.Deleted and value == "§":
+            if token is Generic.Deleted and value == "$":
                 yield index, token, ""
             elif token is Error:
                 yield index, Text, value
