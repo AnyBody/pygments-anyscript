@@ -84,10 +84,11 @@ class AnyScriptLexer(RegexLexer):
                         "#elif",
                         "#class_template",
                         "#define",
-                        "#ifpathexists"
-                        "#ifnpathexists"
+                        "#ifpathexists",
+                        "#ifnpathexists",
                         "#path",
                         "#var",
+                        "#default",
                     )
                 ),
                 Comment.Preproc,
