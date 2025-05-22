@@ -48,7 +48,7 @@ twine = ">=6.1.0,<7"
 
 [tool.pixi.feature.build.tasks]
 clean-build = "rm -rf build dist"
-publish = {cmd="op run --env-file=upload.env -- flit publish "}
+publish = {cmd="op run --env-file=upload.env -- flit publish"}
 build = {cmd="flit build --format=sdist", depends-on=["clean-build"]}
 
 

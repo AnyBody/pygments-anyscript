@@ -650,7 +650,7 @@ packages:
 - pypi: .\
   name: pygments-anyscript
   version: 1.5.0
-  sha256: 031751cc4c2e0c74a328c5da1f68a2d4cc089569ab56e8563e0283da0483cd65
+  sha256: f7cfd053abe89dfcfdf964664ae72f3d38760ec4a8b877fb84d317953c9a2aa3
   requires_dist:
   - pygments
   - pytest ; extra == 'test'
